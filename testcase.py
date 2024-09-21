@@ -31,3 +31,6 @@ print(bin(y))
 #0
 #[]
 #None(null)
+
+
+from random import randint

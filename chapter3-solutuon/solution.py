@@ -20,3 +20,31 @@ print((9+3)//(8-2))
 
 user_card_no = int(input("How Many Cards Do you have with you? "))
 print(round(user_card_no//2))
+
+
+# 4. The distance between two numbers on the number line is the absolute value of the difference of the
+# two numbers. For instance, the distance between 3 and 7.2 is |3 − 7.2| = 4.2. Write a program that
+# asks the user for two numbers and prints out the distance between them.
+
+first_number = eval(input("Enter The First Number : "))
+second_number = eval(input("Enter The Second Number: "))
+
+abs_diff = abs(first_number-second_number)
+print(abs_diff)
+
+# 5. Write a program that asks the user to enter a positive number and then prints out the square root of
+# that number rounded to 2 decimal places.
+
+from math import sqrt
+
+positive_number = eval(input("Enter a POsitive Number : "))
+print(round(sqrt(positive_number,2)))
+
+
+# 6. Write a program that prints out the numbers from 1 to 20 and their square roots, rounded to 4 decimal
+# places, with the square root of the number being on the same line as the number.
+
+from math import sqrt
+
+for i in range(1,21):
+    print(i, round(sqrt(i), 4))

@@ -91,3 +91,6 @@ lsort = [1,8,9,3,7,2]
 lsort.sort()
 print(lsort)
 print(sorted(lsort,reverse=True))
+
+
+#lamda expression or function

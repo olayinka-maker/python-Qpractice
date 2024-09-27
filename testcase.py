@@ -116,13 +116,62 @@ items = [("prd1",10),("prd3",9),("prd2",12)]
 for item in items:
     if(item[1] >= 10):
         print(item[1])
+
+
+
 ## now using filter function
 
 filteredData = list(filter( lambda item : item[1] >= 10,items))
 print(filteredData)
+
+##using list comprehesion to achieve the tsk above
+newFilteredData = [item for item in items if item[1] >= 10]
+print(f"data ${newFilteredData}")
+
 
 #list Comprehension
 
 filteredData = [item[1] for item in items]
 print(filteredData)
 
+
+list1 =  [1,2,3]
+list2 = [10,20,30]
+
+x = zip("aeebc",list1,list2)
+print(list(x))
+
+#stack in python
+ 
+testlist = [1,2,3]
+print(testlist[-1])
+
+
+#queue
+
+from collections import deque
+queue = deque([])
+queue.append(1)
+queue.append(2)
+queue.append(3)
+queue.popleft()
+print(queue)
+if  not queue:
+    print("empty")
+
+#dictionary examples
+d = {'dog' : 'has a tail and goes woof!',
+'cat' : 'says meow',
+'mouse' : 'chased by cats'}
+
+word = input('Enter a word : ')
+print('The definition is:', d[word])
+
+
+
+points = {'A':1, 'B':3, 'C':3, 'D':2, 'E':1, 'F':4, 'G':2,
+'H':4, 'I':1, 'J':8, 'K':5, 'L':1, 'M':3, 'N':1,
+'O':1, 'P':3, 'Q':10, 'R':1, 'S':1, 'T':1, 'U':1,
+'V':4, 'W':4, 'X':8, 'Y':4, 'Z':10}
+score = sum([points[c] for c in word])
+print(score)

@@ -8,4 +8,13 @@
 
 
 
-class Point:
+class Point: 
+
+    def __init__(self,x,y) -> None:
+        pass
+
+    def draw(self):
+        print("draw")
+
+point = Point()
+print(isinstance(point,Point))

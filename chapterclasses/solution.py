@@ -162,4 +162,7 @@ class VendngMachine:
         print(f"Current stock: {self.count}")
 
 
-
+vending_machine  = VendngMachine(100)
+vending_machine.print_stock()
+vending_machine.sell(25)
+vending_machine.print_stock()

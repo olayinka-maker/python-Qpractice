@@ -166,3 +166,24 @@ vending_machine  = VendngMachine(100)
 vending_machine.print_stock()
 vending_machine.sell(25)
 vending_machine.print_stock()
+
+
+
+class ExerciseLog:
+
+    def __init__(self,e_type,duration):
+        self.e_type = e_type
+        self.duration = duration
+
+
+    def __add__(self,other):
+        if self.e_type !=  other.e_type:
+            combined_type = self.e_type + " and " + other.e_type
+        else:
+            combined_type = self.e_type
+        
+            combined_duration = self.duration + other.duration  
+            return ExerciseLog(combined_type, combined_duration)
+
+    def __str__(self):
+        return f"{self.e_type}: {self.duration} minutes"

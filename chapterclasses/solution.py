@@ -142,3 +142,24 @@ car_1 = ProductionCar('McLaren', 'Speedtail', 2020)
 car_1.update_max(250.0)
 print(car_1.make, car_1.model, 'reaches', car_1.max_mph, 'mph (',
 car_1.max_kmh(), 'km/h)')
+
+
+
+class VendngMachine:
+
+    def __init__(self,num):
+        self.count = num
+        self.max = num
+
+    def refill(self):
+        self.count = self.max
+        print("Refllled")
+
+    def sell(self,order):
+        self.count -=  order
+        print(f"Sold: {order}")
+    def print_stock(self):
+        print(f"Current stock: {self.count}")
+
+
+

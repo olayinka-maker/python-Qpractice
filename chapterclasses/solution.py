@@ -70,3 +70,29 @@ print("Room 3's area:", room_3.area())
 #         return len([w for w in self.words if len(w)==n])
 
 
+class FlightTicket:
+     airline = "Ocean Airlines"
+     airline_code= "OA"
+
+     def __init__(self, flight_num=1, airport="JFK", gate="T1-1", time="8:00", seat="1A", passenger="unknown"):
+        self.flight_num = flight_num
+        self.airport = airport
+        self.gate = gate
+        self.time = time
+        self.seat = seat
+        self.passenger = passenger
+     def print_info(self):
+         print(f"Passenger {self.passenger} departs on flight {self.flight_num} at {self.time} from {self.airport} {self.gate} in {self.seat} ")
+    
+ticket = FlightTicket(
+    flight_num=2121,
+    airport="KEF",
+    gate="D22B",
+    time="11:45",
+    seat="12B",
+    passenger="Jules Laurent"
+)
+
+ticket.print_info()
+print(ticket)
+

@@ -94,5 +94,51 @@ ticket = FlightTicket(
 )
 
 ticket.print_info()
-print(ticket)
 
+
+class Book:
+    imprint = "Fantancy Tomes"
+
+    def __init__(self,title="",author="",year=0,pages=0):
+        self.title = title
+        self.author = author
+        self.year = year
+        self.pages =pages
+
+    def print_info(self):
+        print(f"{self.title} by {self.author} published by Fantasy Tomes in {self.year} with {self.pages}  ")
+        print(f"in {self.year} with {self.pages} pages")
+
+
+book1 = Book(
+    title="Lord of the Bracelets",
+    author="Blake R. R. Brown",
+    year=1999,
+    pages=423
+)
+
+book2 = Book(
+    title="A Match of Thrones",
+    author="Terry R. R. Thomas",
+    year=2020,
+    pages=761
+)
+
+book1.print_info()
+book2.print_info()
+
+class ProductionCar:
+    def __init__(self, make, model, year, max_mph = 0.0):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.max_mph = max_mph
+    def max_kmh(self):
+        return self.max_mph * 1.609344
+    def update_max(self, speed):
+         self.max_mph = speed
+
+car_1 = ProductionCar('McLaren', 'Speedtail', 2020)
+car_1.update_max(250.0)
+print(car_1.make, car_1.model, 'reaches', car_1.max_mph, 'mph (',
+car_1.max_kmh(), 'km/h)')

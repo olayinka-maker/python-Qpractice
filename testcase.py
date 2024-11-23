@@ -15,12 +15,7 @@
 # print(course.replace("P","H"))
 
 
-
-
-
-
-
-# #numbers 
+# #numbers
 # x= 20
 # print(bin(x))
 
@@ -28,19 +23,18 @@
 # print(bin(y))
 
 
+# Truty and Falsy values
+# Falsy values
+# ""
+# 0
+# []
+# None(null)
 
-#Truty and Falsy values 
-#Falsy values
-#""
-#0
-#[]
-#None(null)
 
-
-#List Unpacking
+# List Unpacking
 
 # numbers = [1,2,3]
-# first,second,third = numbers 
+# first,second,third = numbers
 
 # print(first)
 
@@ -67,18 +61,18 @@
 # letters.pop()
 # letters.pop(0)
 
-# #removing an item but you dont know the index 
+# #removing an item but you dont know the index
 
-# letters.remove("b") #removes the first occurence of b in the list 
+# letters.remove("b") #removes the first occurence of b in the list
 
 
 # test= ["1","2","3","4","5"]
-# # del is used to remove a  range of items 
+# # del is used to remove a  range of items
 # del test[0:2]
 # print(test)
 
 
-# #finding the index of a data in a list 
+# #finding the index of a data in a list
 
 
 # testList =["a","b","c"]
@@ -86,20 +80,20 @@
 #     print(testList.index("b"))
 
 
-# #sorting a List 
+# #sorting a List
 # lsort = [1,8,9,3,7,2]
 # lsort.sort()
 # print(lsort)
 # print(sorted(lsort,reverse=True))
 
 
-#lamda expression or function
+# lamda expression or function
 
 # x = lambda a : a + 2
 # print(x(5))
 
-# #multiple args 
-# x = lambda a,b,c: a +b+c+ 2 
+# #multiple args
+# x = lambda a,b,c: a +b+c+ 2
 # print(x(5,3,4))
 
 
@@ -116,7 +110,6 @@
 # for item in items:
 #     if(item[1] >= 10):
 #         print(item[1])
-
 
 
 # ## now using filter function
@@ -142,7 +135,7 @@
 # print(list(x))
 
 # #stack in python
- 
+
 # testlist = [1,2,3]
 # print(testlist[-1])
 
@@ -168,7 +161,6 @@
 # print('The definition is:', d[word])
 
 
-
 # points = {'A':1, 'B':3, 'C':3, 'D':2, 'E':1, 'F':4, 'G':2,
 # 'H':4, 'I':1, 'J':8, 'K':5, 'L':1, 'M':3, 'N':1,
 # 'O':1, 'P':3, 'Q':10, 'R':1, 'S':1, 'T':1, 'U':1,
@@ -190,3 +182,23 @@
 # print(value)
 
 
+# testList = [12,3,5,6,7,8]
+
+# for i in range(len(testList)):
+#     print(i,testList[i])
+
+
+# polist = testList.pop(0)
+# print(polist)
+# print(testList)
+
+from array import array
+import random
+
+valueList = array("i", [0] * 100)
+
+for i in range(len(valueList)):
+    valueList[i] = random.randint(1, 1000)
+
+for i in valueList:
+    print(i)

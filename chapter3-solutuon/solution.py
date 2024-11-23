@@ -48,3 +48,7 @@ from math import sqrt
 
 for i in range(1,21):
     print(i, round(sqrt(i), 4))
+
+
+
+    

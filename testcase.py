@@ -192,13 +192,16 @@
 # print(polist)
 # print(testList)
 
-from array import array
-import random
+# from array import array
+# import random
 
-valueList = array("i", [0] * 100)
+# valueList = array("i", [0] * 100)
 
-for i in range(len(valueList)):
-    valueList[i] = random.randint(1, 1000)
+# for i in range(len(valueList)):
+#     valueList[i] = random.randint(1, 1000)
 
-for i in valueList:
-    print(i)
+# for i in valueList:
+#     print(i)
+
+for i in range(2):
+    print()

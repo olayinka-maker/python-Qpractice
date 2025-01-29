@@ -1,205 +1,103 @@
-# #formatted String
-# first = "Hello"
-# last = "World"
-# full = f"{first} {last}"
 
-# print(full)
-
-
-# #useful string methods
-# course = 'Python Programming'
-# print(course.upper())
-# print(course.strip())
-# print(course.title())
-# print(course.find("pro"))
-# print(course.replace("P","H"))
-
-
-# #numbers
-# x= 20
-# print(bin(x))
-
-# y =0x123e
-# print(bin(y))
-
-
-# Truty and Falsy values
-# Falsy values
-# ""
-# 0
-# []
-# None(null)
-
-
-# List Unpacking
-
-# numbers = [1,2,3]
-# first,second,third = numbers
-
-# print(first)
-
-# numbers_2 = [1,2,2,3,4,5,5,6,6,7,6]
-
-# first,second,*rest ,other= numbers_2
-
-# print(other)
-
-
-# letters = ["a","b","c"]
-
-# for index,value in enumerate(letters):
-#     print(index,value)
-
-#  #adding an item to a list
-# letters.append("d")
-
-# #adding an item to a list at a particular position
-# letters.insert(0,"cooked")
-# print(letters)
-
-# #remove an item at the end of a list
-# letters.pop()
-# letters.pop(0)
-
-# #removing an item but you dont know the index
-
-# letters.remove("b") #removes the first occurence of b in the list
-
-
-# test= ["1","2","3","4","5"]
-# # del is used to remove a  range of items
-# del test[0:2]
-# print(test)
-
-
-# #finding the index of a data in a list
-
-
-# testList =["a","b","c"]
-# if "d" in testList:
-#     print(testList.index("b"))
-
-
-# #sorting a List
-# lsort = [1,8,9,3,7,2]
-# lsort.sort()
-# print(lsort)
-# print(sorted(lsort,reverse=True))
-
-
-# lamda expression or function
-
-# x = lambda a : a + 2
-# print(x(5))
-
-# #multiple args
-# x = lambda a,b,c: a +b+c+ 2
-# print(x(5,3,4))
-
-
-# #using lambda with  map functon
-# items = [("prd1",10),("prd3",10),("prd2",12)]
-# for item in items:
-#     print(item)
-# data = list(map(lambda item : item[1], items))
-# print(data)
-
-
-# #filter with lambda
-# items = [("prd1",10),("prd3",9),("prd2",12)]
-# for item in items:
-#     if(item[1] >= 10):
-#         print(item[1])
-
-
-# ## now using filter function
-
-# filteredData = list(filter( lambda item : item[1] >= 10,items))
-# print(filteredData)
-
-# ##using list comprehesion to achieve the tsk above
-# newFilteredData = [item for item in items if item[1] >= 10]
-# print(f"data ${newFilteredData}")
-
-
-# #list Comprehension
-
-# filteredData = [item[1] for item in items]
-# print(filteredData)
-
-
-# list1 =  [1,2,3]
-# list2 = [10,20,30]
-
-# x = zip("aeebc",list1,list2)
-# print(list(x))
-
-# #stack in python
-
-# testlist = [1,2,3]
-# print(testlist[-1])
-
-
-# #queue
-
-# from collections import deque
-# queue = deque([])
-# queue.append(1)
-# queue.append(2)
-# queue.append(3)
-# queue.popleft()
-# print(queue)
-# if  not queue:
-#     print("empty")
-
-# #dictionary examples
-# d = {'dog' : 'has a tail and goes woof!',
-# 'cat' : 'says meow',
-# 'mouse' : 'chased by cats'}
-
-# word = input('Enter a word : ')
-# print('The definition is:', d[word])
-
-
-# points = {'A':1, 'B':3, 'C':3, 'D':2, 'E':1, 'F':4, 'G':2,
-# 'H':4, 'I':1, 'J':8, 'K':5, 'L':1, 'M':3, 'N':1,
-# 'O':1, 'P':3, 'Q':10, 'R':1, 'S':1, 'T':1, 'U':1,
-# 'V':4, 'W':4, 'X':8, 'Y':4, 'Z':10}
-# score = sum([points[c] for c in points])
-# print(score)
-
-
-# deck = [{'value':i, 'suit':c}
-# for c in ['spades', 'clubs', 'hearts', 'diamonds']
-# for i in range(2,15)]
-
-# prin = deck[0]["value"]
-# print(deck)
-
-
-# d = {'A':100, 'B':200,'C':100,}
-# value = [x[1] for x in d.items() if x[1] == 100 ]
-# print(value)
-
-
-# testList = [12,3,5,6,7,8]
-
-# for i in range(len(testList)):
-#     print(i,testList[i])
-
-
-# polist = testList.pop(0)
-# print(polist)
-# print(testList)
-
-# from array import array
-# import random
-
-# valueList = array("i", [0] * 100)
-
-# for i in range(len(valueList)):
-#     valueList[i] = random.randint(1, 1000)
-
-# for i in valueList:
-#     print(i)
+import pygame
+import time
+import random
+
+# Initialize pygame
+pygame.init()
+
+# Screen dimensions
+WIDTH, HEIGHT = 600, 400
+BLOCK_SIZE = 20
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Simple Snake Game")
+
+# Colors
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+RED = (255, 0, 0)
+GREEN = (0, 255, 0)
+
+# Snake and food
+snake_pos = [100, 50]
+snake_body = [[100, 50], [90, 50], [80, 50]]
+food_pos = [random.randrange(1, WIDTH // BLOCK_SIZE) * BLOCK_SIZE,
+            random.randrange(1, HEIGHT // BLOCK_SIZE) * BLOCK_SIZE]
+food_spawn = True
+direction = 'RIGHT'
+change_to = direction
+score = 0
+
+# Game over function
+def game_over():
+    font = pygame.font.SysFont('arial', 50)
+    msg = font.render("Game Over!", True, RED)
+    screen.blit(msg, [WIDTH // 4, HEIGHT // 3])
+    pygame.display.flip()
+    time.sleep(2)
+    pygame.quit()
+    quit()
+
+# Game loop
+clock = pygame.time.Clock()
+
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            quit()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_UP and direction != 'DOWN':
+                change_to = 'UP'
+            elif event.key == pygame.K_DOWN and direction != 'UP':
+                change_to = 'DOWN'
+            elif event.key == pygame.K_LEFT and direction != 'RIGHT':
+                change_to = 'LEFT'
+            elif event.key == pygame.K_RIGHT and direction != 'LEFT':
+                change_to = 'RIGHT'
+
+    direction = change_to
+
+    if direction == 'UP':
+        snake_pos[1] -= BLOCK_SIZE
+    if direction == 'DOWN':
+        snake_pos[1] += BLOCK_SIZE
+    if direction == 'LEFT':
+        snake_pos[0] -= BLOCK_SIZE
+    if direction == 'RIGHT':
+        snake_pos[0] += BLOCK_SIZE
+
+    snake_body.insert(0, list(snake_pos))
+    if snake_pos[0] == food_pos[0] and snake_pos[1] == food_pos[1]:
+        score += 10
+        food_spawn = False
+    else:
+        snake_body.pop()
+
+    if not food_spawn:
+        food_pos = [random.randrange(1, WIDTH // BLOCK_SIZE) * BLOCK_SIZE,
+                    random.randrange(1, HEIGHT // BLOCK_SIZE) * BLOCK_SIZE]
+    food_spawn = True
+
+    if (snake_pos[0] < 0 or snake_pos[0] >= WIDTH or
+            snake_pos[1] < 0 or snake_pos[1] >= HEIGHT):
+        game_over()
+
+    for block in snake_body[1:]:
+        if snake_pos == block:
+            game_over()
+
+    screen.fill(BLACK)
+    for block in snake_body:
+        pygame.draw.rect(screen, GREEN, pygame.Rect(block[0], block[1], BLOCK_SIZE, BLOCK_SIZE))
+
+    pygame.draw.rect(screen, RED, pygame.Rect(food_pos[0], food_pos[1], BLOCK_SIZE, BLOCK_SIZE))
+
+    font = pygame.font.SysFont('arial', 20)
+    score_text = font.render(f"Score: {score}", True, WHITE)
+    screen.blit(score_text, [10, 10])
+
+    pygame.display.update()
+
+    clock.tick(10)
 
